@@ -1,0 +1,99 @@
+body {
+	margin: 0px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color:#F2F2F2;
+}
+div.header-div{
+	background: #5F9EA0;
+    background: -moz-linear-gradient(270deg, #3FB0BF 0%, #060B2E 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3FB0BF), color-stop(100%, #060B2E)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(270deg, #3FB0BF 0%, #060B2E 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(270deg, #3FB0BF 0%, #060B2E 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(270deg, #3FB0BF 0%, #060B2E 100%); /* ie10+ */
+    background: linear-gradient(180deg, #3FB0BF 0%, #060B2E 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3FB0BF', endColorstr='#060B2E',GradientType=0 ); /* ie6-9 */
+
+}
+table.header-table{
+	width: 970px;
+	margin: auto;
+}
+div.title-div{
+	font-family: 'Ubuntu',sans-serif;
+	font-size: 1.8em;
+	font-weight: 300;
+	text-align: center;
+	text-shadow: 0 -1px 1px #000000;
+	color: #ffffff;
+
+}
+div.content-div{
+	/* background-color: #FFFFFF; */
+}
+table.content-table{
+	width: 1000px;
+	margin: auto;
+	border-collapse: collapse;
+}
+div.left-menu-div{
+	width: 240px;
+	padding-top: 5px;
+	float: left;
+}
+div.right-content-div{
+	width: 750px;
+	padding: 5px;
+	float: left;
+}
+div.draw-area{
+	/* margin: 5px; */
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.x.axis path {
+	display: none;
+}
+
+.line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 3px; /* 5px */
+}
+
+.rule line {
+	stroke: #eeeeee;
+	shape-rendering: crispEdges;
+}
+
+/* bar chart */
+.bar {
+	/*fill: steelblue; */
+}
+.bar:hover {
+	fill: brown;
+}
+
+#tooltip {
+	position: absolute;
+	/*width: 200px;*/
+	height: auto;
+	padding: 10px;
+	background-color: black;
+	color: white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+	font-size: 12px;
+}

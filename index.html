@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="image/x-icon" href="images/icons/favicon.ico" rel="shortcut icon" />
+	<title>COSTI Innovation Dashboard</title>
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu/styles1.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu/styles2.css" />
+
+	<script type="text/javascript" src="js/jquery/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/d3/d3.min.js"></script>
+	<script type="text/javascript" src="js/scripts/content.js"></script>
+	<script type="text/javascript" src="js/menu/main.js"></script>
+</head>
+<body>
+	<div class="header-div">
+		<table class="header-table">
+			<tr>
+				<td>
+					<div class="title-div">COSTI Innovation Dashboard</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="content-div">
+		<table class="content-table">
+			<tr>
+				<td>
+					<!-- Nav tabs -->
+					<div style="padding-top: 5px;">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#people" data-toggle="tab">People</a></li>
+							<li><a href="#places" data-toggle="tab">Places</a></li>
+							<li><a href="#positioning" data-toggle="tab">Positioning</a></li>
+						</ul>
+					</div>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="people">
+
+							<!-- left menu -->
+							<div id='cssmenu' style="float:left;">
+								<ul>
+									<li><a href='#'><span>Area of Interest</span></a></li>
+									<li><a href='#' onclick=""><span>Natural Sciences</span></a>
+										<ul>
+											<li><a href='#' onclick="">Mathematics</a></li>
+											<li><a href='#' onclick="">Computer and information sciences</a></li>
+											<li><a href='#'>Physical sciences</a></li>
+											<li><a href='#'>Chemical sciences</a></li>
+											<li><a href='#'>Earth and related environmental sciences</a></li>
+											<li><a href='#'>Biological sciences</a></li>
+											<li><a href='#'>Other natural sciences</a></li>
+										</ul>
+									</li>
+									<li><a href='#' onclick=""><span>Engineering and Technology</span></a>
+										<ul>
+											<li><a href='#' onclick="">Civil engineering</a></li>
+											<li><a href='#' onclick="">Electrical engineering, electronic 
+												engineering, information engineering</a></li>
+												<li><a href='#' onclick="">Mechanical engineering</a></li>
+												<li><a href='#'>Chemical engineering</a></li>
+												<li><a href='#'>Materials engineering</a></li>
+												<li><a href='#'>Medical engineering</a></li>
+												<li><a href='#'>Environmental engineering</a></li>
+												<li><a href='#'>Environmental biotechnology</a></li>
+												<li><a href='#'>Industrial Biotechnology</a></li>
+												<li><a href='#'>Nano-technology</a></li>
+												<li><a href='#'>Other engineering and technologies</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Medical and Health Sciences</span></a>
+											<ul>
+												<li><a href='#' onclick="">Basic medicine</a></li>
+												<li><a href='#'>Clinical medicine</a></li>
+												<li><a href='#'>Health sciences</a></li>
+												<li><a href='#'>Health biotechnology</a></li>
+												<li><a href='#'>Other medical sciences</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Agricultural Sciences</span></a>
+											<ul>
+												<li><a href='#' onclick="">Agriculture, forestry, and fisheries</a></li>
+												<li><a href='#'>Animal and dairy science</a></li>
+												<li><a href='#'>Veterinary science</a></li>
+												<li><a href='#'>Agricultural biotechnology</a></li>
+												<li><a href='#'>Other agricultural sciences</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Social Sciences</span></a>
+											<ul>
+												<li><a href='#' onclick="">Psychology</a></li>
+												<li><a href='#'>Economics and business</a></li>
+												<li><a href='#'>Educational sciences </a></li>
+												<li><a href='#'>Sociology</a></li>
+												<li><a href='#'>Law</a></li>
+												<li><a href='#'>Political Science</a></li>
+												<li><a href='#'>Social and economic geography</a></li>
+												<li><a href='#'>Media and communications</a></li>
+												<li><a href='#'>Other social sciences</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Humanities</span></a>
+											<ul>
+												<li><a href='#' onclick="">History and archaeology</a></li>
+												<li><a href='#'>Languages and literature</a></li>
+												<li><a href='#'>Philosophy, ethics and religion</a></li>
+												<li><a href='#'>Art (arts, history of arts, performing arts, music)</a></li>
+												<li><a href='#'>Other humanities</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								
+								<!-- right content division -->
+								<div class="right-content-div">
+									<div class="draw-area" id="drawarea">
+										
+									</div>
+								</div>
+								
+								<div style="clear: both;"></div>
+								
+							</div>
+							<div class="tab-pane fade" id="places">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a arcu sodales, fermentum tortor et, luctus est. Nam porttitor malesuada auctor. Aliquam vulputate aliquam euismod. Curabitur vitae quam a purus ultrices aliquet sed quis nunc. Etiam non tristique ante. Sed odio tortor, ultricies at dignissim vel, laoreet blandit lacus. Ut at lacus felis. Mauris consectetur orci sed nibh adipiscing, rutrum iaculis ipsum adipiscing. Donec congue purus lorem, ac feugiat urna malesuada viverra. Nullam est magna, laoreet sit amet nunc vitae, volutpat posuere sapien.</p> 
+							</div>
+							<div class="tab-pane" id="positioning">
+								<div id='cssmenu2'  style="float:left;">
+									<ul>
+										<li><a href='#'><span>Global Innovation Index</span></a></li>
+										<li><a href='#' onclick=""><span>Institutions</span></a>
+											<ul>
+												<li><a href='#' onclick="">Political environment</a></li>
+												<li><a href='#' onclick="">Regulatory environment</a></li>
+												<li><a href='#'>Business environment</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span class="image">Human Capital & Research</span></a>
+											<ul>
+												<li><a href='#' onclick="">Education</a></li>
+												<li><a href='#' onclick="">Tertiary education</a></li>
+												<li><a href='#' onclick="">Research & development (R&D)</a></li>
+												</ul>
+											</li>
+											<li><a href='#' onclick=""><span>Infrastructure</span></a>
+												<ul>
+													<li><a href='#' onclick="">Information & communication technologies (ICTs)</a></li>
+													<li><a href='#'>General infrastructure</a></li>
+													<li><a href='#'>Ecological sustainability</a></li>
+												</ul>
+											</li>
+											<li><a href='#' onclick=""><span>Market sophistication</span></a>
+												<ul>
+													<li><a href='#' onclick="">Credit</a></li>
+													<li><a href='#'>Investment</a></li>
+													<li><a href='#'>Trade & competition</a></li>
+												</ul>
+											</li>
+											<li><a href='#' onclick=""><span>Business sophistication</span></a>
+												<ul>
+													<li><a href='#' onclick="">Knowledge workers</a></li>
+													<li><a href='#'>Innovation linkages</a></li>
+													<li><a href='#'>Knowledge absorption</a></li>
+												</ul>
+											</li>
+											<li><a href='#' onclick=""><span>Knowledge & technology outputs</span></a>
+												<ul>
+													<li><a href='#' onclick="">Knowledge creation</a></li>
+													<li><a href='#'>Knowledge impact</a></li>
+													<li><a href='#'>Knowledge diffusion</a></li>
+												</ul>
+											</li>
+											<li><a href='#' onclick=""><span>Creative outputs</span></a>
+												<ul>
+													<li><a href='#' onclick="">Intangible assets</a></li>
+													<li><a href='#'>Creative goods & services</a></li>
+													<li><a href='#'>Online creativity</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</body>
+		</html>
