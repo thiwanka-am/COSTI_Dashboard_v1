@@ -8,14 +8,18 @@
 	<link rel="stylesheet" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="css/menu/styles1.css" />
 	<link rel="stylesheet" type="text/css" href="css/menu/styles2.css" />
+	<link rel="stylesheet" type="text/css" href="css/grid/demo_table_jui.css" />
+	<link rel="stylesheet" type="text/css" href="css/grid/jquery-ui-1.8.4.custom.css" />
 
 	<script type="text/javascript" src="js/jquery/jquery-1.9.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/d3/d3.min.js"></script>
 	<script type="text/javascript" src="js/scripts/content.js"></script>
 	<script type="text/javascript" src="js/menu/main.js"></script>
+	<script type="text/javascript" src="js/grid/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 </head>
-<body>
+<body onload="load();">
 	<div class="header-div">
 		<table class="header-table">
 			<tr>
@@ -47,7 +51,7 @@
 									<li><a href='#'><span>Area of Interest</span></a></li>
 									<li><a href='#' onclick=""><span>Natural Sciences</span></a>
 										<ul>
-											<li><a href='#' onclick="">Mathematics</a></li>
+											<li><a href='#' onclick="changeSubArea();">Mathematics</a></li>
 											<li><a href='#' onclick="">Computer and information sciences</a></li>
 											<li><a href='#'>Physical sciences</a></li>
 											<li><a href='#'>Chemical sciences</a></li>
@@ -115,16 +119,45 @@
 									</ul>
 								</div>
 								
+								<div id="grid" style="float:right;width:78%;" class="dataGrid">
+									<div id="blank" >
+										<section id="left">
+											<div id="userStats" class="clearfix" >
+												<div class="data">
+													<h3 id="area">Mathematics</h3>
+													<ul class="numbers clearfix">
+														<li>People : <strong>315</strong>
+															<a href="#"><img id="img" src="css/images/atom2.png" width="32" height="32" /></a>
+														</li>
+														<li>Publications : <strong>315</strong>
+															<a href="#"><img id="img" src="css/images/atom2.png" width="32" height="32" /></a>
+														</li>
+														<li class="nobrdr">Patents : <strong>45</strong>
+															<a href="#"><img id="img" src="css/images/atom2.png" width="32" height="32" /></a>
+														</li>
+													</ul>
+												</div>
+
+												<div class="pic">
+													<a href="#"><img id="img" src="css/images/atom2.png" width="64" height="64" /></a>
+												</div>
+											</div>
+
+											<div id="chart_div" style="width: 605px; height: 250px;position:absolute;margin-top:5%;"></div>
+										</section>
+									</div>
+									<table cellpadding="0" cellspacing="0" border="0" class="display" id="peopleGrid" ></table>
+								</div> 
 								<!-- right content division -->
-								<div class="right-content-div">
+								<div class="right-content-div" id="rightDiv">
 									<div class="draw-area" id="drawarea">
 										
 									</div>
+									
 								</div>
-								
 								<div style="clear: both;"></div>
 								
-							</div>
+							</div>	
 							<div class="tab-pane fade" id="places">
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a arcu sodales, fermentum tortor et, luctus est. Nam porttitor malesuada auctor. Aliquam vulputate aliquam euismod. Curabitur vitae quam a purus ultrices aliquet sed quis nunc. Etiam non tristique ante. Sed odio tortor, ultricies at dignissim vel, laoreet blandit lacus. Ut at lacus felis. Mauris consectetur orci sed nibh adipiscing, rutrum iaculis ipsum adipiscing. Donec congue purus lorem, ac feugiat urna malesuada viverra. Nullam est magna, laoreet sit amet nunc vitae, volutpat posuere sapien.</p> 
 							</div>
@@ -144,50 +177,50 @@
 												<li><a href='#' onclick="">Education</a></li>
 												<li><a href='#' onclick="">Tertiary education</a></li>
 												<li><a href='#' onclick="">Research & development (R&D)</a></li>
-												</ul>
-											</li>
-											<li><a href='#' onclick=""><span>Infrastructure</span></a>
-												<ul>
-													<li><a href='#' onclick="">Information & communication technologies (ICTs)</a></li>
-													<li><a href='#'>General infrastructure</a></li>
-													<li><a href='#'>Ecological sustainability</a></li>
-												</ul>
-											</li>
-											<li><a href='#' onclick=""><span>Market sophistication</span></a>
-												<ul>
-													<li><a href='#' onclick="">Credit</a></li>
-													<li><a href='#'>Investment</a></li>
-													<li><a href='#'>Trade & competition</a></li>
-												</ul>
-											</li>
-											<li><a href='#' onclick=""><span>Business sophistication</span></a>
-												<ul>
-													<li><a href='#' onclick="">Knowledge workers</a></li>
-													<li><a href='#'>Innovation linkages</a></li>
-													<li><a href='#'>Knowledge absorption</a></li>
-												</ul>
-											</li>
-											<li><a href='#' onclick=""><span>Knowledge & technology outputs</span></a>
-												<ul>
-													<li><a href='#' onclick="">Knowledge creation</a></li>
-													<li><a href='#'>Knowledge impact</a></li>
-													<li><a href='#'>Knowledge diffusion</a></li>
-												</ul>
-											</li>
-											<li><a href='#' onclick=""><span>Creative outputs</span></a>
-												<ul>
-													<li><a href='#' onclick="">Intangible assets</a></li>
-													<li><a href='#'>Creative goods & services</a></li>
-													<li><a href='#'>Online creativity</a></li>
-												</ul>
-											</li>
-										</ul>
-									</div>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Infrastructure</span></a>
+											<ul>
+												<li><a href='#' onclick="">Information & communication technologies (ICTs)</a></li>
+												<li><a href='#'>General infrastructure</a></li>
+												<li><a href='#'>Ecological sustainability</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Market sophistication</span></a>
+											<ul>
+												<li><a href='#' onclick="">Credit</a></li>
+												<li><a href='#'>Investment</a></li>
+												<li><a href='#'>Trade & competition</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Business sophistication</span></a>
+											<ul>
+												<li><a href='#' onclick="">Knowledge workers</a></li>
+												<li><a href='#'>Innovation linkages</a></li>
+												<li><a href='#'>Knowledge absorption</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Knowledge & technology outputs</span></a>
+											<ul>
+												<li><a href='#' onclick="">Knowledge creation</a></li>
+												<li><a href='#'>Knowledge impact</a></li>
+												<li><a href='#'>Knowledge diffusion</a></li>
+											</ul>
+										</li>
+										<li><a href='#' onclick=""><span>Creative outputs</span></a>
+											<ul>
+												<li><a href='#' onclick="">Intangible assets</a></li>
+												<li><a href='#'>Creative goods & services</a></li>
+												<li><a href='#'>Online creativity</a></li>
+											</ul>
+										</li>
+									</ul>
 								</div>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</body>
-		</html>
+							</div>	
+						</div>								
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	</html>
