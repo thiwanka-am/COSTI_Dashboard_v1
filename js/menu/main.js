@@ -51,4 +51,30 @@ $(document).ready(function(){
       return true;  
     }   
   });
+
+  $('#cssmenu3 > ul > li:has(ul)').addClass("has-sub");
+
+  $('#cssmenu3 > ul > li > a').click(function() {
+    var checkElement = $(this).next();
+    
+    $('#cssmenu3 li').removeClass('active');
+    $(this).closest('li').addClass('active'); 
+    
+    
+    if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+      $(this).closest('li').removeClass('active');
+      checkElement.slideUp('normal');
+    }
+    
+    if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+      $('#cssmenu3 ul ul:visible').slideUp('normal');
+      checkElement.slideDown('normal');
+    }
+    
+    if (checkElement.is('ul')) {
+      return false;
+    } else {
+      return true;  
+    }   
+  });
 });

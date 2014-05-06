@@ -23,6 +23,8 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  padding-top:5px;
+  margin-left: 5px;
 }
 #cssmenu2 a {
   line-height: 1.3;

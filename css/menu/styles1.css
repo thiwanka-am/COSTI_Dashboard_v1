@@ -18,12 +18,13 @@
   position: relative;
 }
 #cssmenu {
-  width: 210px;
+  width: 21%;
   border-bottom: 4px solid #656659;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-top: 5px;
+  margin-left: 5px;
 }
 #cssmenu a {
   line-height: 1.3;

@@ -742,16 +742,26 @@ pre code {
 @media (min-width: 768px) {
   .container {
     width: 750px;
+    z-index: 2;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 100%;
+    z-index: 2;
+  }
+}
+@media (min-width: 1366px) {
+  .container {
+    width: 100%;
+    z-index: 2;
   }
 }
 .container-fluid {

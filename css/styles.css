@@ -1,6 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
 body {
 	margin: 0px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color:#F2F2F2;
 }
 div.header-div{
@@ -29,9 +32,13 @@ div.title-div{
 }
 div.content-div{
 	/* background-color: #FFFFFF; */
+	position: absolute;
+	z-index: 1;
+	margin-top: 60px;
+	width: 100%;
 }
 table.content-table{
-	width: 1000px;
+	width: 100%;
 	margin: auto;
 	border-collapse: collapse;
 }
@@ -45,8 +52,63 @@ div.right-content-div{
 	padding: 5px;
 	float: left;
 }
+#area{
+	font-size: 16px;
+	height: 26px;
+}
 div.draw-area{
 	/* margin: 5px; */
+}
+
+#rightDivPlaces{
+	position: relative;
+}
+
+#sri-lanka-map-area{
+	position: absolute;
+	width: 440px;
+	height: 550px;
+	/*left: 5px;
+	top: 5px;*/
+	/*border: 1px solid red;*/
+}
+
+#top-institutions-area{
+	position: absolute;
+	width: 380px;
+	height: 500px;
+	left: 410px;
+	top: 5px;
+	/*border: 1px solid black;*/
+}
+
+#rightDivPosition{
+	position: relative;
+}
+
+#region-map-area{
+	position: absolute;
+	width: 320px;
+	height: 320px;
+	left: 5px;
+	top: 35px;
+}
+
+#radar-chart{
+	position: absolute;
+	width: 450px;
+	height: 320px;
+	left: 330px;
+	top: 35px;
+}
+
+p.regiontip-para{
+	text-align: justify;
+}
+
+img.regiontip-image{
+	float: left;
+	margin: 5px 10px 5px 0px;
 }
 
 .axis text {
@@ -59,7 +121,7 @@ div.draw-area{
 }
 
 .x.axis path {
-	display: none;
+	/*display: none;*/
 }
 
 .line {
@@ -69,7 +131,7 @@ div.draw-area{
 }
 
 .rule line {
-	stroke: #eeeeee;
+	stroke: #dddddd;
 	shape-rendering: crispEdges;
 }
 
@@ -98,24 +160,99 @@ div.draw-area{
 	font-size: 12px;
 }
 
+#tooltip2 {
+    position: absolute;
+    background: black;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: lighter;
+    /*padding: 9px 11px 0px 11px;*/
+    display: none;
+    z-index: 100 !important;
+    /*width: 165px;*/
+    /*min-height: 80px;*/
+    
+    /*-webkit-box-shadow: 1px 1px 1px 0px #000;
+	-moz-box-shadow: 1px 1px 1px 0px #000;
+    box-shadow: 1px 1px 1px 0px #000;*/
+    pointer-events: none;
+    -webkit-border-radius: 5px 5px 5px 0px;
+	-moz-border-radius: 5px 5px 5px 0px;
+	border-radius: 5px 5px 5px 0px;
+}
+
+#tooltip2.right {
+	/*-webkit-box-shadow: -1px 1px 1px 0px #000;
+	-moz-box-shadow: -1px 1px 1px 0px #000;
+    box-shadow: -1px 1px 1px 0px #000;*/
+}
+#tooltip2.right svg {
+    /*left: auto;
+    right: 0px;*/
+}
+#tooltip2 svg {
+    position: absolute;
+    /*display: inline;
+    float: right;
+    left: 0px;
+    right: auto;*/
+    /*top: -13px;*/
+    width: 100px;
+    height: 100px;
+}
+#tooltip2 #tooltip-triangle {
+    background: black;
+    fill: rgba(0, 0, 0, 0.8);
+}
+#tooltip2 .value .value-part {
+    font-size: 32px;
+    vertical-align: top;
+    position: relative;
+    /*top: -3px;*/
+}
+#tooltip2 .tooltip-content{
+	padding: 9px 11px 0px 11px;
+}
+
+/*svg{
+	border: 1px solid black;
+}*/
+
+/* start - override bootstrap settings */
+.panel-heading{
+	padding: 5px 15px;
+}
+
+.panel-body{
+	padding: 5px 15px;
+}
+
+.panel-title {
+    font-size: 14px;
+}
+/* end - override bootstrap settings */
+
 
 /* @group left */
 #userStats { 
 	display: block; 
 	width: 100%; 
-	
-    background: -moz-linear-gradient(270deg, #31A122 0%, #02750A 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #31A122), color-stop(100%, #02750A)); /* safari4+,chrome */
-    background: -webkit-linear-gradient(270deg, #31A122 0%, #02750A 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(270deg, #31A122 0%, #02750A 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(270deg, #31A122 0%, #02750A 100%); /* ie10+ */
-    background: linear-gradient(180deg, #31A122 0%, #02750A 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31A122', endColorstr='#02750A',GradientType=0 ); /* ie6-9 */
-
-	border: 1px solid #45463d;
+	background-color: #30943D;/* #009966 */ 
+   /*  background: -moz-linear-gradient(270deg, #31A122 0%, #02750A 100%); ff3.6+
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #31A122), color-stop(100%, #02750A)); safari4+,chrome
+   background: -webkit-linear-gradient(270deg, #31A122 0%, #02750A 100%); safari5.1+,chrome10+
+   background: -o-linear-gradient(270deg, #31A122 0%, #02750A 100%); opera 11.10+
+   background: -ms-linear-gradient(270deg, #31A122 0%, #02750A 100%); ie10+
+   background: linear-gradient(180deg, #31A122 0%, #02750A 100%); w3c
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31A122', endColorstr='#02750A',GradientType=0 ); ie6-9
+    */
+	/* border: 1px solid #45463d;*/
 	-webkit-border-radius: 3px 3px 3px 3px;
 	-moz-border-radius: 3px 3px 3px 3px;
-	border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px; 
+	height: 70px;
 }
 
 #userStats .pic { 
@@ -227,3 +364,99 @@ div.draw-area{
 	margin-right: 5px;
 }
 
+#top-people-area{
+	position: absolute;
+	width: 380px;
+	height: 225px;
+	left: 22%;
+	top: 80px;
+	/*border: 1px solid black;*/
+}
+
+.inst-img{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.people-panel-body{
+	padding:0px 15px;
+}
+
+.panel-people{
+	width:450px;
+	border-color: #DDDDDD;
+	background-color: #DDDDDD;
+	height: 41px;
+}
+.top-panel{
+	width:450px;
+	border-color: #DDDDDD;
+	background-color: #DDDDDD;
+	height: 25px;
+}
+
+#top-people-1-area{
+	float:right;
+	width: 250px;
+}
+
+#top-people-2-area{
+	float:right;
+	width: 250px;
+}
+#top-people-3-area{
+	float:right;
+	width: 250px;
+}
+#top-people-4-area{
+	float:right;
+	width: 250px;
+}
+#top-people-5-area{
+	float:right;
+	width: 250px;
+}
+.people-name{
+	vertical-align: middle;
+	float: left;
+	padding-top: 7px;
+	margin-left: 10px;
+}
+.top-people{
+	vertical-align: middle;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #B7B9C1;
+	height: 25px;
+	width:100%;
+}
+
+#grid{
+	margin-top: 5px;
+	padding-right: 5px;
+}
+
+.logo1{
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.logo2{
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+#people-draw-area{
+	width: 605px; 
+	height: 250px;
+	position: absolute;
+	margin-top: 335px;
+	margin-left: 22%;
+}
+
+#people-draw-area-donut{
+	position: absolute;
+	margin-top: 60px;
+	margin-left: 60%;
+}
