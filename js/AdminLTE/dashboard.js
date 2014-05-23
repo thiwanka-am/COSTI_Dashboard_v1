@@ -28,7 +28,7 @@ $(function() {
     //bootstrap WYSIHTML5 - text editor
     $(".textarea").wysihtml5();
 
-    $('.daterange').daterangepicker(
+    /*$('.daterange').daterangepicker(
             {
                 ranges: {
                     'Today': [moment(), moment()],
@@ -43,10 +43,10 @@ $(function() {
             },
     function(start, end) {
         alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    });
+    });*/
 
     /* jQueryKnob */
-    $(".knob").knob();
+    /*$(".knob").knob();*/
 
     //jvectormap data
     var visitorsData = {
@@ -63,7 +63,7 @@ $(function() {
         "RU": 3000 //Russia
     };
     //World map by jvectormap
-    $('#world-map').vectorMap({
+    /*$('#world-map').vectorMap({
         map: 'world_mill_en',
         backgroundColor: "#fff",
         regionStyle: {
@@ -87,7 +87,7 @@ $(function() {
                 el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
         }
     });
-
+*/
     //Sparkline charts
     var myvalues = [15, 19, 20, -22, -33, 27, 31, 27, 19, 30, 21];
     $('#sparkline-1').sparkline(myvalues, {
@@ -139,7 +139,7 @@ $(function() {
             y = date.getFullYear();
 
     //Calendar
-    $('#calendar').fullCalendar({
+   /* $('#calendar').fullCalendar({
         editable: true, //Enable drag and drop
         events: [
             {
@@ -201,7 +201,7 @@ $(function() {
             right: 'prev,next'
         }
     });
-
+*/
     /*//SLIMSCROLL FOR CHAT WIDGET
     $('#chat-box').slimScroll({
         height: '250px'
@@ -294,13 +294,13 @@ $(function() {
     });
 */
     /* The todo list plugin */
-    $(".todo-list").todolist({
+   /* $(".todo-list").todolist({
         onCheck: function(ele) {
             //console.log("The element has been checked")
         },
         onUncheck: function(ele) {
             //console.log("The element has been unchecked")
         }
-    });
+    });*/
 
 });
