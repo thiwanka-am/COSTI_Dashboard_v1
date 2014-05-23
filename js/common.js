@@ -11,9 +11,19 @@ function load(){
 	$('#top-people-area').hide();
 	$('#people-draw-area').hide();
 	$('#people-draw-area-donut').hide();
-	$('#myTab a:first').tab('show');
+	//$('#myTab a:'+window.location.search.split('option=')[1]+'').tab('show');
+	$('#myTab a[href="#' + window.location.search.split('option=')[1] + '"]').tab('show');
 	$('#chart_div').show();
 }
+
+function activeTab(tab){
+	window.location="home.html?option="+tab;
+};
+
+function changeTab(tab){
+	$('#myTab a[href="#'+tab+'"]').tab('show');
+};
+
 function loadGrid() {
 
 	oTable = $('#peopleGrid').dataTable({

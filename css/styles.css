@@ -34,7 +34,6 @@ div.content-div{
 	/* background-color: #FFFFFF; */
 	position: absolute;
 	z-index: 1;
-	margin-top: 60px;
 	width: 100%;
 }
 table.content-table{
@@ -460,3 +459,64 @@ img.regiontip-image{
 	margin-top: 60px;
 	margin-left: 60%;
 }
+
+.navbtn{
+	font-family: 'Ubuntu',sans-serif;
+	width: 100%;
+	position: absolute;
+	margin-left: 10px;
+}
+.navbtn ul {
+	max-width: 1240px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+/* Adding some background color to the different menu items */
+
+.navbtn li:nth-child(6n+2) {
+	background: rgb(208, 101, 3);
+}
+
+.navbtn li:nth-child(6n+3) {
+	background: rgb(233, 147, 26);
+}
+
+.navbtn li:nth-child(6n+4) {
+	background: rgb(22, 145, 190);
+}
+
+.navbtn li:nth-child(6n+5) {
+	background: rgb(22, 107, 162);
+}
+
+.navbtn li:nth-child(6n+6) {
+	background: rgb(27, 54, 71);
+}
+
+.navbtn li:nth-child(6n+1) {
+	background: rgb(21, 40, 54);
+}
+
+.navbtn li {
+		float: left;
+		width: auto;
+		text-align: center;
+		color: #ffffff;
+		padding:10px 5px 5px 5px;
+		-webkit-transition: border .5s;
+		-moz-transition: border .5s;
+		-o-transition: border .5s;
+		-ms-transition: border .5s;
+		transition: border .5s;
+	}
+
+.navbtn a {
+	display: block;
+	width: auto;
+	color: #ffffff;
+}
+

@@ -1426,5 +1426,23 @@ function drawTopPeopleGraph(){
 			    .attr("d", arc);
 
 			isDonutloaded=true;
+
+			svg.append("text")
+			.attr("font-family", "sans-serif")
+			.attr("font-weight", "bold")
+			.attr("font-size", "14px")
+			.attr("fill", "black")
+			.attr("x", 125)
+			.attr("y", 34)
+			.text("All");
+
+			svg.append("text")
+			.attr("font-family", "sans-serif")
+			.attr("font-weight", "bold")
+			.attr("font-size", "14px")
+			.attr("fill", "black")
+			.attr("x", 125)
+			.attr("y", 34)
+			.text("Mathematics");
 		}
     }

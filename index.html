@@ -1,679 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link type="image/x-icon" href="images/icons/favicon.ico" rel="shortcut icon" />
-		<title>COSTI Innovation Dashboard</title>
-		<link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
-		<link rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" type="text/css" href="css/menu/styles1.css" />
-		<link rel="stylesheet" type="text/css" href="css/menu/styles2.css" />
-		<link rel="stylesheet" type="text/css" href="css/menu/styles3.css" />
-		
-		<link rel="stylesheet" href="ammap/ammap.css" />
-	
-		<script type="text/javascript" src="js/jquery/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/d3/d3.min.js"></script>
-		<script type="text/javascript" src="js/scripts/utility.js"></script>
-		<script type="text/javascript" src="js/scripts/people-content.js"></script>
-		<script type="text/javascript" src="js/menu/main.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		
-		<script type="text/javascript" src="ammap/ammap.js"></script>
-	    <script type="text/javascript" src="ammap/maps/js/sriLankaHigh.js"></script>
-	    <script type="text/javascript" src="js/scripts/places-content.js"></script>
-	    
-	    <script type="text/javascript" src="ammap/maps/js/worldHigh.js"></script>
-	    <script type="text/javascript" src="js/scripts/position-content.js"></script>
-	    <script type="text/javascript" src="js/d3/RadarChart.js"></script>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sri Lanka Innovation Dashboard</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- bootstrap 3.0.2 -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- font Awesome -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Ionicons -->
+        <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!-- Morris chart -->
+        <link href="css/morris/morris.css" rel="stylesheet" type="text/css" />
+        <!-- jvectormap -->
+        <link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <!-- fullCalendar -->
+        <link href="css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+        <!-- Daterange picker -->
+        <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/common.js"></script>
+        <!-- bxSlider CSS file -->
+        <link href="css/jquery.bxslider.css" rel="stylesheet" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="skin-blue">
+        <!-- header logo: style can be found in header.less -->
+        <header class="mainheader">
+            <div class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                <img src="images/costi_logo.jpg" height="50"  style="margin-top:-7px;margin-left:-10px;width:140px;">
+            </div>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <!-- <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a> -->
+                <span ><img src="images/gov_logo.png" height="42" width="38" style="margin-top:4px;"></span>
+                 <span style="color:#F9F9F9;font-size:24px;vertical-align:middle;margin-left:10px;">Sri Lanka Innovation Dashboard</span>   
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span>User <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-light-blue">
+                                    <img src="images/avatar3.png" class="img-circle" alt="User Image" />
+                                    <p>
+                                        User - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Followers</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Friends</a>
+                                    </div>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            
 
-	    <link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/menu/css/normalize.css" />
-		<!-- <link rel="stylesheet" type="text/css" href="menu/css/demo.css" /> -->
-		<link rel="stylesheet" type="text/css" href="css/menu/css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
-		<script src="js/menu/js/modernizr.custom.js"></script>
-		<script src="js/menu/js/classie.js"></script>
-		<script src="js/menu/js/gnmenu.js"></script>
-	</head>
-	<body onload="load();">
-		<div class="container" style="width:100%;padding-left:0px;padding-right:0px;">
-			<div style="paddding-top:5px;">
-				<nav id="menu" class="nav">
-					<ul id="myTab" >
-						<li style="width:8%;height:60px;"><a class="test" href="#people"  data-toggle="tab">People</a></li>
-						<li style="width:8%;height:60px;"><a class="test" href="#places" data-toggle="tab">Places</a></li>
-						<li style="width:8%;height:60px;"><a class="test" href="#position"  data-toggle="tab">Position</a></li>
-					</ul>
-					<ul>
-						<li style="width:58%;background: rgb(21, 40, 54);">
-							<div style="height: 60px;">
-								<table width="100%">
-									<tr>
-										<td width="8%">
-											<img class="logo1" src="images/icons/gov_logo.png" height="48" width="44">
-										</td>
-										<td width="76%">
-											<div style="font-size:28px;padding-top:10px;color:white;">
-									Sri Lankan Innovation Dashboard
-											</div>
-										</td>
-										<td width="14%">
-											<img class="logo2" src="images/icons/costi_logo.jpg" height="48" width="90">
-										</td>
-									</tr>
-								</table>
-							</div>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a href="#">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-profile"></i>
-								</span>
-								<span class="descr">Profile</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-user"></i>
-								</span>
-								<span class="descr">Users</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-admin"></i>
-								</span>
-								<span class="descr">Data</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div><!-- /container -->
-		<script>
-			//  The function to change the class
-			var changeClass = function (r,className1,className2) {
-				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
-				if( regex.test(r.className) ) {
-					r.className = r.className.replace(regex,' '+className2+' ');
-			    }
-			    else{
-					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
-			    }
-			    return r.className;
-			};	
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+               <!--  <section class="content-header">
+                   <h1>
+                       
+                       <small></small>
+                   </h1>
+                   <ol class="breadcrumb">
+                       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                       <li class="active">Dashboard</li>
+                   </ol>
+               </section> -->
+                <section >
+                    <ul class="bxslider">
+                      <li style="text-align:center;"><img src="images/innovation3.jpg" height="200"></li>
+                      <li style="text-align:center;"><img src="images/innovation2.jpg" height="200"></li>
+                      <li style="text-align:center;"><img src="images/innovation.jpg" height="200"></li>
+                   </ul>
+                    
+                </section>
+                <!-- Main content -->
+                <section class="content">
 
-			//  Creating our button in JS for smaller screens
-			var menuElements = document.getElementById('menu');
-			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                        People
+                                    </h3>
+                                    <p>
+                                        Researchers, Scientists, Inventors, Innovators...
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a onclick="activeTab('people');" href="" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        Places
+                                    </h3>
+                                    <p>
+                                        Institutes and Organizatons afiliated with innovation...
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-earth"></i>
+                                </div>
+                                <a onclick="activeTab('places');" href="" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        Position
+                                    </h3>
+                                    <p>
+                                        Global Innovation Index and other innovation indexs...
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a onclick="activeTab('position');" href="" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        Partnerships
+                                    </h3>
+                                    <p>
+                                        People's, Institute's affiliation with foreign parties...
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a onclick="activeTab('people');" href="" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                    </div><!-- /.row -->
 
-			//  Toggle the class on click to show / hide the menu
-			document.getElementById('menutoggle').onclick = function() {
-				changeClass(this, 'navtoogle active', 'navtoogle');
-			}
+                    <!-- top row -->
+                    <div class="row">
+                        <div class="col-xs-12 connectedSortable">
+                            
+                        </div><!-- /.col -->
+                    </div>
+                    <!-- /.row -->
 
-			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
-			document.onclick = function(e) {
-				var mobileButton = document.getElementById('menutoggle'),
-					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <!-- <section class="col-lg-6 connectedSortable"> 
+                            Box (with bar chart)
+                            <div class="box box-danger" id="loading-example">
+                                <div class="box-header">
+                                    tools box
+                                    <div class="pull-right box-tools">
+                                        <button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                                        <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                                        <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                                    </div>/. tools
+                                    <i class="fa fa-cloud"></i>
+                        
+                                    <h3 class="box-title">Server Load</h3>
+                                </div>/.box-header
+                                <div class="box-body no-padding">
+                                    <div class="row">
+                                        <div class="col-sm-7">
+                                            bar chart
+                                            <div class="chart" id="bar-chart" style="height: 250px;"></div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="pad">
+                                                Progress bars
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Bandwidth</span>
+                                                    <small class="pull-right">10/200 GB</small>
+                                                </div>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                                                </div>
+                        
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Transfered</span>
+                                                    <small class="pull-right">10 GB</small>
+                                                </div>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-red" style="width: 70%;"></div>
+                                                </div>
+                        
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Activity</span>
+                                                    <small class="pull-right">73%</small>
+                                                </div>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-light-blue" style="width: 70%;"></div>
+                                                </div>
+                        
+                                                <div class="clearfix">
+                                                    <span class="pull-left">FTP</span>
+                                                    <small class="pull-right">30 GB</small>
+                                                </div>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 70%;"></div>
+                                                </div>
+                                                Buttons
+                                                <p>
+                                                    <button class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i> Generate PDF</button>
+                                                </p>
+                                            </div>/.pad
+                                        </div>/.col
+                                    </div>/.row - inside box
+                                </div>/.box-body
+                                <div class="box-footer">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                            <input type="text" class="knob" data-readonly="true" value="80" data-width="60" data-height="60" data-fgColor="#f56954"/>
+                                            <div class="knob-label">CPU</div>
+                                        </div>./col
+                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                            <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#00a65a"/>
+                                            <div class="knob-label">Disk</div>
+                                        </div>./col
+                                        <div class="col-xs-4 text-center">
+                                            <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#3c8dbc"/>
+                                            <div class="knob-label">RAM</div>
+                                        </div>./col
+                                    </div>/.row
+                                </div>/.box-footer
+                            </div>/.box        
+                            
+                            Custom tabs (Charts with tabs)
+                            <div class="nav-tabs-custom">
+                                Tabs within a box
+                                <ul class="nav nav-tabs pull-right">
+                                    <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+                                    <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+                                    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    Morris chart - Sales
+                                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+                                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                                </div>
+                            </div>/.nav-tabs-custom
+                                                
+                            Calendar
+                            <div class="box box-warning">
+                                <div class="box-header">
+                                    <i class="fa fa-calendar"></i>
+                                    <div class="box-title">Calendar</div>
+                                    
+                                    tools box
+                                    <div class="pull-right box-tools">
+                                        button with a dropdown
+                                        <div class="btn-group">
+                                            <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
+                                            <ul class="dropdown-menu pull-right" role="menu">
+                                                <li><a href="#">Add new event</a></li>
+                                                <li><a href="#">Clear events</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">View calendar</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>/. tools                                    
+                                </div>/.box-header
+                                <div class="box-body no-padding">
+                                    The calendar
+                                    <div id="calendar"></div>
+                                </div>/.box-body
+                            </div>/.box
+                        
+                            quick email widget
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <i class="fa fa-envelope"></i>
+                                    <h3 class="box-title">Quick Email</h3>
+                                    tools box
+                                    <div class="pull-right box-tools">
+                                        <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                                    </div>/. tools
+                                </div>
+                                <div class="box-body">
+                                    <form action="#" method="post">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="emailto" placeholder="Email to:"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="subject" placeholder="Subject"/>
+                                        </div>
+                                        <div>
+                                            <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="box-footer clearfix">
+                                    <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
+                                </div>
+                            </div>
+                        -->
+                        
+                    </div><!-- /.row (main row) -->
 
-				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
-					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
-				}
-			}
-		</script>
-	<div class="content-div">
-		<table class="content-table">
-			<tr>
-				<td>
-					<!-- Nav tabs -->
-					<!-- <div style="padding-top: 5px;">
-						<ul class="nav nav-tabs" id="myTab">
-							<li><a href="#people" data-toggle="tab">People</a></li>
-							<li><a href="#places" data-toggle="tab">Places</a></li>
-							<li><a href="#position" data-toggle="tab">Position</a></li>
-						</ul>
-					</div> -->
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<!-- people division -->
-						<div class="tab-pane fade" id="people">
-							<!-- left menu -->
-							<div id='cssmenu' style="float:left;">
-								<ul>
-									<li><a href='#' onclick="load();loadContent('People', 'Number of People',  'people.svg', 456542, 7678, 789)"><span>Area of Interest</span></a></li>
-									<li><a href='#' onclick="load();loadContent('Natural Sciences', 'Number of People',  'natural-science.svg', 6242, 476, 11)"><span>Natural Sciences</span></a>
-										<ul>
-											<li><a href='#' onclick="changeSubArea();loadContent('Mathematics', 'Number of People', 'maths.svg', 124, 25, 14)">Mathematics</a></li>
-											<li><a href='#' onclick="changeSubArea();">Computer and information sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Physical sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Chemical sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Earth and related environmental sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Biological sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Other natural sciences</a></li>
-										</ul>
-									</li>
-									<li><a href='#' onclick="load();loadContent('Engineering and Technology', 'Number of People', 'engineering-and-technology.svg', 6242, 476, 11)"><span>Engineering and Technology</span></a>
-										<ul>
-											<li><a href='#' onclick="changeSubArea();">Civil engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Electrical engineering, electronic engineering, information engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Mechanical engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Chemical engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Materials engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Medical engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Environmental engineering</a></li>
-											<li><a href='#' onclick="changeSubArea();">Environmental biotechnology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Industrial Biotechnology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Nano-technology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Other engineering and technologies</a></li>
-										</ul>
-									</li>
-									<li><a href='#' onclick="load();loadContent('Medical and Health Sciences', 'Number of People', 'medical-and-health-sciences.svg', 6242, 476, 11)"><span>Medical and Health Sciences</span></a>
-										<ul>
-											<li><a href='#' onclick="changeSubArea();">Basic medicine</a></li>
-											<li><a href='#' onclick="changeSubArea();">Clinical medicine</a></li>
-											<li><a href='#' onclick="changeSubArea();">Health sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Health biotechnology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Other medical sciences</a></li>
-										</ul>
-									</li>
-									<li><a href='#' onclick="load();loadContent('Agricultural Sciences', 'Number of People', 'agricultural-sciences.svg', 6242, 476, 11)"><span>Agricultural Sciences</span></a>
-										<ul>
-											<li><a href='#' onclick="changeSubArea();">Agriculture, forestry, and fisheries</a></li>
-											<li><a href='#' onclick="changeSubArea();">Animal and dairy science</a></li>
-											<li><a href='#' onclick="changeSubArea();">Veterinary science</a></li>
-											<li><a href='#' onclick="changeSubArea();">Agricultural biotechnology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Other agricultural sciences</a></li>
-										</ul>
-									</li>
-									<li><a href='#' onclick="load();loadContent('Social Sciences', 'Number of People', 'social-sciences.svg', 42, 476, 56)"><span>Social Sciences</span></a>
-										<ul>
-											<li><a href='#' onclick="changeSubArea();">Psychology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Economics and business</a></li>
-											<li><a href='#' onclick="changeSubArea();">Educational sciences</a></li>
-											<li><a href='#' onclick="changeSubArea();">Sociology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Law</a></li>
-											<li><a href='#' onclick="changeSubArea();">Political Science</a></li>
-											<li><a href='#' onclick="changeSubArea();">Social and economic geography</a></li>
-											<li><a href='#' onclick="changeSubArea();">Media and communications</a></li>
-											<li><a href='#' onclick="changeSubArea();">Other social sciences</a></li>
-										</ul>
-									</li>
-									<li><a href='#' onclick="load();loadContent('Humanities', 'Number of People', 'humanities.svg', 5472, 476, 24)"><span>Humanities</span></a>
-										<ul>
-											<li><a href='#' onclick="changeSubArea();">History and archaeology</a></li>
-											<li><a href='#' onclick="changeSubArea();">Languages and literature</a></li>
-											<li><a href='#' onclick="changeSubArea();">Philosophy, ethics and religion</a></li>
-											<li><a href='#' onclick="changeSubArea();">Art (arts, history of arts, performing arts, music)</a></li>
-											<li><a href='#' onclick="changeSubArea();">Other humanities</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-								
-								<div id="grid" style="float:left;width:77.5%;margin-left:5px;" class="dataGrid">
-									<div id="blank" >
-										<section id="left">
-											<div id="userStats" class="clearfix" >
-												<div class="pic">
-													<a href="#"><img id="imgMain" src="images/icons/maths.svg" width="56" height="56" /></a>
-												</div>
-												<div class="data">
-													<h3 id="area"></h3>
-													<div align="right">
-														<ul class="numbers clearfix" >
-															<li>
-																<a href="#"><img id="imgPeople" src="images/icons/people.svg" width="22" height="22" ></a>
-																People : <strong id="numPeople">4500</strong>
-															</li>
-															<li>
-																<a href="#"><img id="imgPubs" src="images/icons/publications.svg" width="22" height="22" /></a>
-																Publications : <strong id="numPubs">759</strong>
-															</li>
-															<li style="border-right:0px;">
-																<a href="#"><img id="imgPatents" src="images/icons/patent.svg" width="22" height="22" /></a>
-																Patents : <strong id="numPatents">174</strong>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
 
-											<div id="chart_div" style="width: 605px; height: 250px; position: absolute;">
-												<div class="draw-area" id="drawarea"></div>
-											</div>
-										</section>
-									</div>
-									<!-- <table cellpadding="0" cellspacing="0" border="0" class="display" id="peopleGrid" ></table> -->
-								</div>
-								<div id="top-people-area">
-									
-									<div class="panel-group" id="top-people-accordion">
-										<div class="panel top-panel">
-											<div class="top-people">
-												Top Researchers
-											</div>
-										</div>
-										<div class="panel panel-people">
-											<div class="people-name">
-												<img src="images/user-images/institutions/uoc.png" width="24" height="24" class="inst-img" />
-												<a href="#" onclick="popitup('profile.html')">Mayuri Wijesinghe</a>
-											</div>
-											<div id="top-people-1-area">
-														
-											</div>
-										</div>
-										<div class="panel panel-people">
-											<div class="people-name">
-												<img src="images/user-images/institutions/uop.png" width="24" height="24" class="inst-img"/>
-												<a href="#">M Meegaskumbura</a>
-											</div>
-											<div id="top-people-2-area">
-														
-											</div>
-										</div>
-										<div class="panel panel-people">
-											<div class="people-name">
-												<img src="images/user-images/institutions/uom.png" width="24" height="24" class="inst-img"/>
-												<a href="#">M Zwarteveen</a>
-											</div>
-											<div id="top-people-3-area">
-														
-											</div>
-										</div>
-										<div class="panel panel-people">
-											<div class="people-name">
-												<img src="images/user-images/institutions/ousl.png" width="24" height="24" class="inst-img"/>
-												<a href="#">Abeysena C</a>
-											</div>
-											<div id="top-people-4-area">
-														
-											</div>
-										</div>
-										<div class="panel panel-people">
-											<div class="people-name">
-												<img src="images/user-images/institutions/sjp.png" width="24" height="24" class="inst-img"/>
-												<a href="#">K P Hewagamage</a>
-											</div>
-											<div id="top-people-5-area">
-														
-											</div>
-										</div>
-									</div>
-								</div>	
-								<div class="draw-area" id="people-draw-area"></div>
-								<div class="draw-area" id="people-draw-area-donut" ></div>
-								<div style="clear: both;"></div> 
-								
-							</div>
-							<!-- places division -->
-							<div class="tab-pane fade" id="places">
-								<div id='cssmenu3' style="float:left;">
-									<ul>
-										<li><a href='#'><span>Area of Interest</span></a></li>
-										<li><a href='#' onclick=""><span>Natural Sciences</span></a>
-											<ul>
-												<li><a href='#' onclick="changeSubArea();">Mathematics</a></li>
-												<li><a href='#'>Computer and information sciences</a></li>
-												<li><a href='#'>Physical sciences</a></li>
-												<li><a href='#'>Chemical sciences</a></li>
-												<li><a href='#'>Earth and related environmental sciences</a></li>
-												<li><a href='#'>Biological sciences</a></li>
-												<li><a href='#'>Other natural sciences</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Engineering and Technology</span></a>
-											<ul>
-												<li><a href='#' onclick="">Civil engineering</a></li>
-												<li><a href='#'>Electrical engineering, electronic engineering, information engineering</a></li>
-												<li><a href='#'>Mechanical engineering</a></li>
-												<li><a href='#'>Chemical engineering</a></li>
-												<li><a href='#'>Materials engineering</a></li>
-												<li><a href='#'>Medical engineering</a></li>
-												<li><a href='#'>Environmental engineering</a></li>
-												<li><a href='#'>Environmental biotechnology</a></li>
-												<li><a href='#'>Industrial Biotechnology</a></li>
-												<li><a href='#'>Nano-technology</a></li>
-												<li><a href='#'>Other engineering and technologies</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Medical and Health Sciences</span></a>
-											<ul>
-												<li><a href='#' onclick="">Basic medicine</a></li>
-												<li><a href='#'>Clinical medicine</a></li>
-												<li><a href='#'>Health sciences</a></li>
-												<li><a href='#'>Health biotechnology</a></li>
-												<li><a href='#'>Other medical sciences</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Agricultural Sciences</span></a>
-											<ul>
-												<li><a href='#' onclick="">Agriculture, forestry, and fisheries</a></li>
-												<li><a href='#'>Animal and dairy science</a></li>
-												<li><a href='#'>Veterinary science</a></li>
-												<li><a href='#'>Agricultural biotechnology</a></li>
-												<li><a href='#'>Other agricultural sciences</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Social Sciences</span></a>
-											<ul>
-												<li><a href='#' onclick="">Psychology</a></li>
-												<li><a href='#'>Economics and business</a></li>
-												<li><a href='#'>Educational sciences</a></li>
-												<li><a href='#'>Sociology</a></li>
-												<li><a href='#'>Law</a></li>
-												<li><a href='#'>Political Science</a></li>
-												<li><a href='#'>Social and economic geography</a></li>
-												<li><a href='#'>Media and communications</a></li>
-												<li><a href='#'>Other social sciences</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Humanities</span></a>
-											<ul>
-												<li><a href='#' onclick="">History and archaeology</a></li>
-												<li><a href='#'>Languages and literature</a></li>
-												<li><a href='#'>Philosophy, ethics and religion</a></li>
-												<li><a href='#'>Art (arts, history of arts, performing arts, music)</a></li>
-												<li><a href='#'>Other humanities</a></li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-								<div class="right-content-div" id="rightDivPlaces">
-									<div id="drawarea-places">
-										<div id="sri-lanka-map-area"></div>
-										<div id="top-institutions-area">
-											
-											<!-- <h3 style="margin: 0px 0px 6px 0px;">Top Universities in Sri Lanka</h3> -->
-											<div class="panel-group" id="top-institutions-accordion">
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/uoc.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-1">University of Colombo</a>
-														</h4>
-													</div>
-													<div id="desc-inst-1" class="panel-collapse collapse in">
-														<div class="panel-body">
-															<div id="top-inst-1-area">
-																
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/uom.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-2">University of Moratuwa</a>
-														</h4>
-													</div>
-													<div id="desc-inst-2" class="panel-collapse collapse">
-														<div class="panel-body">
-															<div id="top-inst-2-area">
-																
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/sjp.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-3">University of Sri Jayewardenepura</a>
-														</h4>
-													</div>
-													<div id="desc-inst-3" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/ousl.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-4">Open University of Sri Lanka</a>
-														</h4>
-													</div>
-													<div id="desc-inst-4" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/accimt.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-5">Arthur C Clark Institute for Modern Technologies</a>
-														</h4>
-													</div>
-													<div id="desc-inst-5" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/ifs.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-6">Institute of Fundamental Studies</a>
-														</h4>
-													</div>
-													<div id="desc-inst-6" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/uop.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-7">University of Peradeniya</a>
-														</h4>
-													</div>
-													<div id="desc-inst-7" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/tri.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-8">Tea Research Institute</a>
-														</h4>
-													</div>
-													<div id="desc-inst-8" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/susl.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-9">Sabaragamuwa University of Sri Lanka</a>
-														</h4>
-													</div>
-													<div id="desc-inst-9" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-															<img src="images/user-images/institutions/uwu.png" width="24" />
-															<a data-toggle="collapse" data-parent="#top-institutions-accordion" href="#desc-inst-10">Uwa Wellassa University</a>
-														</h4>
-													</div>
-													<div id="desc-inst-10" class="panel-collapse collapse">
-														<div class="panel-body">
-															Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-														</div>
-													</div>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div style="clear: both;"></div>
-							</div>
-							<!-- position division -->
-							<div class="tab-pane" id="position">
-								<div id='cssmenu2'  style="float:left;">
-									<ul>
-										<li><a href='#'><span>Global Innovation Index</span></a></li>
-										<li><a href='#' onclick="drawRadarChart('Institutions')"><span>Institutions</span></a>
-											<ul>
-												<li><a href='#' onclick="">Political environment</a></li>
-												<li><a href='#' onclick="">Political stability</a></li>
-												<li><a href='#' onclick="">Government effectiveness</a></li>
-												<li><a href='#' onclick="">Press freedom</a></li>
-												<li><a href='#' onclick="">Regulatory environment</a></li>
-												<li><a href='#' onclick="">Regulatory quality</a></li>
-												<li><a href='#' onclick="">Rule of law</a></li>
-												<li><a href='#' onclick="">Cost of redundancy dismissal, salary weeks</a></li>
-												<li><a href='#' onclick="">Business environment</a></li>
-												<li><a href='#' onclick="">Ease of starting a business</a></li>
-												<li><a href='#' onclick="">Ease of resolving insolvency</a></li>
-												<li><a href='#' onclick="">Ease of paying taxes</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick="drawRadarChart('Human Capital & Research')"><span class="image">Human Capital & Research</span></a>
-											<ul>
-												<li><a href='#' onclick="">Education</a></li>
-												<li><a href='#' onclick="">Current expenditure on education, % GNI</a></li>
-												<li><a href='#' onclick="">Public expenditure/pupil, % GDP/cap</a></li>
-												<li><a href='#' onclick="">School life expectancy, years</a></li>
-												<li><a href='#' onclick="">PISA scales in reading, maths & science</a></li>
-												<li><a href='#' onclick="">Pupil-teacher ratio, secondary</a></li>
-												<li><a href='#' onclick="">Tertiary education</a></li>
-												<li><a href='#' onclick="">Tertiary enrolment, % gross</a></li>
-												<li><a href='#' onclick="">Graduates in science & engineering, %</a></li>
-												<li><a href='#' onclick="">Tertiary inbound mobility, %</a></li>
-												<li><a href='#' onclick="">Gross tertiary outbound enrolment, %</a></li>
-												<li><a href='#' onclick="">Research and development (R&D)</a></li>
-												<li><a href='#' onclick="">Researchers, headcounts/mn  pop</a></li>
-												<li><a href='#' onclick="">Gross expenditure on R&D, % GDP</a></li>
-												<li><a href='#' onclick="">QS university ranking, average score top 3</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick="drawRadarChart('Infrastructure')"><span>Infrastructure</span></a>
-											<ul>
-												<li><a href='#' onclick="">Information & communication technologies (ICTs)</a></li>
-												<li><a href='#' onclick="">ICT access</a></li>
-												<li><a href='#' onclick="">ICT use</a></li>
-												<li><a href='#' onclick="">Government’s online service</a></li>
-												<li><a href='#' onclick="">E-participation</a></li>
-												<li><a href='#' onclick="">General infrastructure</a></li>
-												<li><a href='#' onclick="">Electricity output, kWh/cap</a></li>
-												<li><a href='#' onclick="">Electricity consumption, kWh/cap</a></li>
-												<li><a href='#' onclick="">Logistics performance</a></li>
-												<li><a href='#' onclick="">Gross capital formation, % GDP</a></li>
-												<li><a href='#' onclick="">Ecological sustainability</a></li>
-												<li><a href='#' onclick="">GDP/unit of energy use, 2000 PPP$/kg oil eq</a></li>
-												<li><a href='#' onclick="">Environmental performance</a></li>
-												<li><a href='#' onclick="">ISO 14001 environmental certificates/bn PPP$ GDP</a></li>
-												
-											</ul>
-										</li>
-										<li><a href='#' onclick="drawRadarChart('Market sophistication')"><span>Market sophistication</span></a>
-											<ul>
-												<li><a href='#' onclick="">Credit</a></li>
-												<li><a href='#' onclick="">Ease of getting credit</a></li>
-												<li><a href='#' onclick="">Domestic credit to private sector, % GDP</a></li>
-												<li><a href='#' onclick="">Microfinance gross loans, % GDP</a></li>
-												<li><a href='#' onclick="">Investment</a></li>
-												<li><a href='#' onclick="">Ease of protecting investors</a></li>
-												<li><a href='#' onclick="">Market capitalization, % GDP</a></li>
-												<li><a href='#' onclick="">Total value of stocks traded, % GDP</a></li>
-												<li><a href='#' onclick="">Venture capital deals/tr PPP$ GDP</a></li>
-												<li><a href='#' onclick="">Trade & competition</a></li>
-												<li><a href='#' onclick="">Applied tariff rate, weighted mean, %</a></li>
-												<li><a href='#' onclick="">Non-agricultural mkt access weighted tariff, %</a></li>
-												<li><a href='#' onclick="">Intensity of local competition</a></li>
-												
-											</ul>
-										</li>
-										<li><a href='#' onclick="drawRadarChart('Business sophistication')"><span>Business sophistication</span></a>
-											<ul>
-												<li><a href='#' onclick="">Knowledge workers</a></li>
-												<li><a href='#' onclick="">Knowledge-intensive employment, %</a></li>
-												<li><a href='#' onclick="">Firms offering formal training, % firms</a></li>
-												<li><a href='#' onclick="">R&D performed by business, % GDP</a></li>
-												<li><a href='#' onclick="">R&D financed by business, %</a></li>
-												<li><a href='#' onclick="">GMAT mean score</a></li>
-												<li><a href='#' onclick="">GMAT test takers/mn pop. 20–34</a></li>
-												<li><a href='#' onclick="">Innovation linkages</a></li>
-												<li><a href='#' onclick="">University/industry research collaboration</a></li>
-												<li><a href='#' onclick="">State of cluster development</a></li>
-												<li><a href='#' onclick="">R&D financed by abroad, %</a></li>
-												<li><a href='#' onclick="">JV–strategic alliance deals/tr PPP$ GDP</a></li>
-												<li><a href='#' onclick="">Patent families filed in 3+ offices/bn PPP$ GDP</a></li>
-												<li><a href='#' onclick="">Knowledge absorption</a></li>
-												<li><a href='#' onclick="">Royalty & license fees payments, % service imports</a></li>
-												<li><a href='#' onclick="">High-tech imports less re-imports, %</a></li>
-												<li><a href='#' onclick="">Comm., computer & info. services imports, %</a></li>
-												<li><a href='#' onclick="">FDI net inflows, % GDP</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Knowledge & technology outputs</span></a>
-											<ul>
-												<li><a href='#' onclick="">Knowledge creation</a></li>
-												<li><a href='#'>Knowledge impact</a></li>
-												<li><a href='#'>Knowledge diffusion</a></li>
-											</ul>
-										</li>
-										<li><a href='#' onclick=""><span>Creative outputs</span></a>
-											<ul>
-												<li><a href='#' onclick="">Intangible assets</a></li>
-												<li><a href='#'>Creative goods & services</a></li>
-												<li><a href='#'>Online creativity</a></li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-								<div class="right-content-div" id="rightDivPosition">
-									<div id="drawarea-position">
-										<div id="region-map-area"></div>
-										<div id="radar-chart"></div>
-									</div>
-								</div>
-								<div style="clear: both;"></div>
-							</div>	
-						</div>								
-					</td>
-				</tr>
-			</table>
-		</div>
-		<!-- tooltip -->
-		<div id="tooltip2">
-			<div class="tooltip-content">
-				<p id="tooltip-title">title of tooltip</p>
-				<div class="value">
-					<span id="tooltip-value" class="value-part">75</span>
-					<span id="tooltip-desc" class="value-total">People</span>
-				</div>
-			</div>
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-				<polygon id="tooltip-triangle" points="0,0 13,0 0,11"></polygon>
-			</svg>
-		</div>
-	</body>
+        <!-- add new calendar event modal -->
+
+
+        <!-- jQuery 2.0.2 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- jQuery UI 1.10.3 -->
+        <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- Morris.js charts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <!--<script src="js/plugins/morris/morris.min.js" type="text/javascript"></script>-->
+        <!-- Sparkline -->
+        <script src="js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+        <!-- jvectormap -->
+        <script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+        <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <!-- fullCalendar -->
+        <script src="js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!-- iCheck -->
+        <script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+
+        <!-- AdminLTE App -->
+        <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+        
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>     
+        
+        <!-- bxSlider Javascript file -->
+        <script src="js/jquery.bxslider.min.js"></script>
+        
+        <!-- AdminLTE for demo purposes -->
+        <script src="js/AdminLTE/demo.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+              $('.bxslider').bxSlider({
+                  //auto: true
+                  //autoControls: true
+                });
+            });
+        </script>
+    </body>
 </html>
