@@ -111,7 +111,7 @@ body.fixed .wrapper {
 }
 /* Content */
 .content {
-  padding: 20px 15px;
+  padding: 10px 15px;
   background: #f9f9f9;
 }
 /* Utility */
@@ -1169,7 +1169,7 @@ body > .mainheader .logo .icon {
   background: rgba(0, 0, 0, 0.15);
 }
 .small-box h3 {
-  font-size: 38px;
+  font-size: 28px;
   font-weight: bold;
   margin: 0 0 10px 0;
   white-space: nowrap;
