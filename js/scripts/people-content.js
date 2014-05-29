@@ -1432,8 +1432,8 @@ function drawTopPeopleGraph(){
 			.attr("font-weight", "bold")
 			.attr("font-size", "14px")
 			.attr("fill", "black")
-			.attr("x", 125)
-			.attr("y", 34)
+			.attr("x", -90)
+			.attr("y", -100)
 			.text("All");
 
 			svg.append("text")
@@ -1441,8 +1441,8 @@ function drawTopPeopleGraph(){
 			.attr("font-weight", "bold")
 			.attr("font-size", "14px")
 			.attr("fill", "black")
-			.attr("x", 125)
-			.attr("y", 34)
+			.attr("x", -20)
+			.attr("y", 120)
 			.text("Mathematics");
 		}
     }

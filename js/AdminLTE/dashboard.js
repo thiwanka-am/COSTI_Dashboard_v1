@@ -89,7 +89,7 @@ $(function() {
     });
 */
     //Sparkline charts
-    var myvalues = [15, 19, 20, -22, -33, 27, 31, 27, 19, 30, 21];
+   /* var myvalues = [15, 19, 20, -22, -33, 27, 31, 27, 19, 30, 21];
     $('#sparkline-1').sparkline(myvalues, {
         type: 'bar',
         barColor: '#00a65a',
@@ -131,7 +131,7 @@ $(function() {
         negBarColor: "#f56954",
         height: '20px'
     });
-
+*/
     //Date for the calendar events (dummy data)
     var date = new Date();
     var d = date.getDate(),

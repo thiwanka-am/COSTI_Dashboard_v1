@@ -17,7 +17,8 @@ function load(){
 }
 
 function activeTab(tab){
-	window.location="home.html?option="+tab;
+	window.open("temp.html", "_self");
+	//window.open("home.html?option="+tab, "_self");
 };
 
 function changeTab(tab){
