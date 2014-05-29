@@ -338,7 +338,38 @@ $(document).ready(function(){
 			// //return "rgb(" + (d * 2) + ", " + (d * 2) + ", " + (d * 2) + ")";
 		// })
 		.attr("fill", "steelblue");
-    
+		
+	var defs = barChartGroup.append("defs");
+		
+	var grad1 = defs.append("linearGradient")
+		.attr("id", "peopleBarGrad1")
+		.attr("x1", "0%")
+	    .attr("y1", "0%")
+	    .attr("x2", "0%")
+	    .attr("y2", "100%");
+	grad1.append("svg:stop")
+		.attr("offset", "0%")
+		.attr("stop-color", "#447fb0") // 4682B4
+		.attr("stop-opacity", 1);
+	grad1.append("svg:stop")
+	    .attr("offset", "100%")
+	    .attr("stop-color", "#315a7c") // 50acf9
+	    .attr("stop-opacity", 1);
+	    
+	var grad2= defs.append("linearGradient")
+		.attr("id", "peopleBarGrad2")
+		.attr("x1", "0%")
+	    .attr("y1", "0%")
+	    .attr("x2", "0%")
+	    .attr("y2", "100%");
+	grad2.append("svg:stop")
+		.attr("offset", "0%")
+		.attr("stop-color", "#be4620") // 4682B4
+		.attr("stop-opacity", 1);
+	grad2.append("svg:stop")
+	    .attr("offset", "100%")
+	    .attr("stop-color", "#a42800") // 50acf9
+	    .attr("stop-opacity", 1);
     
     /*barChartGroup.append("g")
 		.attr("class", "x axis")
@@ -450,7 +481,9 @@ function drawPeopleLineChart(yAxisTitle){
 	//var tempMax = Math.random() * 90;
 	datasetLine = getRandomArray(14, 45, 60);
 	
-	yScaleLine.domain([0, d3.max(datasetLine)]);
+	var minLineYValue = d3.min(datasetLine) - 5 < 0 ? 0 : d3.min(datasetLine) - 5;
+	var maxLineYValue = d3.max(datasetLine) + 5;
+	yScaleLine.domain([minLineYValue, maxLineYValue]);
 	
 	// add title to line chart
 	lineChartGroup.select("text")
@@ -461,6 +494,7 @@ function drawPeopleLineChart(yAxisTitle){
         .attr("text-anchor", "middle")
         .style("font-size", "14px")
         .text(yAxisTitle + " vs. Year");
+	console.log(yAxisTitle);
 	
 	// remove old grid and update horizontal grid lines
 	lineChartGroup.selectAll("g.rule")
@@ -657,7 +691,8 @@ function drawPeopleBarChart(areaOfInterest, yAxisTitle){
 			return height;
 		})
 		.attr("height", 0)
-		.attr("fill", "steelblue")
+		.attr("fill", "url(#peopleBarGrad1)")
+		.attr("stroke", "#23415a")
 		.transition()
 		.duration(1000)
 		.ease("cubic-in-out") // linear, circle, elastic, bounce, cubic
@@ -666,8 +701,7 @@ function drawPeopleBarChart(areaOfInterest, yAxisTitle){
 		})
 		.attr("height", function(d){
 			return height - yScaleBar(d);
-		})
-		.attr("fill", "steelblue");
+		});
 		
 	// update x axis
 	barChartGroup.select("g.x")
@@ -719,6 +753,11 @@ function drawPeopleBarChart(areaOfInterest, yAxisTitle){
 				.style("display", "block")
 				.style("left", tooltipPositionX + "px")
 				.style("top", tooltipPositionY + "px");
+			
+			d3.select(this)
+				.attr("stroke", "#531400")
+				.attr("fill", "url(#peopleBarGrad2)");
+				
 			})
 		.on("mousemove", function(d, i){
 			// tooltipPositionX = d3.event.pageX;
@@ -732,6 +771,10 @@ function drawPeopleBarChart(areaOfInterest, yAxisTitle){
 			d3.select("#tooltip2")
 				.transition()
 				.style("display", "none");
+			
+			d3.select(this)
+				.attr("stroke", "#23415a")
+				.attr("fill", "url(#peopleBarGrad1)");
 		});
 }
 

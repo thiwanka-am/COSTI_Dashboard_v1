@@ -24,7 +24,7 @@ function LineChart(area, data, options) {
 
     this.globalLineNum = globalLineNumber++;
 
-    $(areaId).append('<div id="line-tooltip' + this.globalLineNum + '"></div>');
+    $("body").append('<div id="line-tooltip' + this.globalLineNum + '" style="z-index: 100;"></div>');
     $("#line-tooltip" + this.globalLineNum).css({"position": "absolute", "background": "rgba(0, 0, 0, 0.8)", "color": "white", "font-family": "Arial", "font-size": "14px", "font-weight": "lighter", "z-index": "100 !important", "pointer-events": "none"});
     $("#line-tooltip" + this.globalLineNum).append('<div id="line-tooltip-content' + this.globalLineNum + '" style="padding: 5px 10px 5px 10px;">');
     $("#line-tooltip-content" + this.globalLineNum).append('<span id="line-tooltip-desc' + this.globalLineNum + '" style="font-size: 12px;">desc of tooltip</span><br/>');
@@ -175,11 +175,11 @@ function LineChart(area, data, options) {
                     .duration(250)
                     .attr("r", 8);
 
-            var posX = d3.event.pageX - d3.mouse(this)[0] + Number(d3.select(this).attr("cx")) - 6;
+            var posX = Number(d3.event.pageX) - Number(d3.mouse(this)[0]) + Number(d3.select(this).attr("cx")) - 6;
             var posY = d3.event.pageY - d3.mouse(this)[1] + Number(d3.select(this).attr("cy")) - 68;
 			
-			var posX2 = d3.event.pageX - d3.mouse(this)[0] + Number(d3.select(this).attr("cx")) - 222;
-			var posY2 = d3.event.pageY - d3.mouse(this)[1] + Number(d3.select(this).attr("cy")) - 124;
+			//var posX2 = d3.event.pageX - d3.mouse(this)[0] + Number(d3.select(this).attr("cx")) - 222;
+			//var posY2 = d3.event.pageY - d3.mouse(this)[1] + Number(d3.select(this).attr("cy")) - 124;
 
             var tipValue = (d.value).toFixed(cnfg.valuePrecision);
             tipValue = +tipValue; // drops any "extra" zeroes at the end
@@ -189,8 +189,8 @@ function LineChart(area, data, options) {
             d3.select("#line-tooltip" + lineNum)
                     .transition()
                     .style("display", "block")
-                    .style("left", posX2 + "px")
-                    .style("top", posY2 + "px");
+                    .style("left", posX + "px")
+                    .style("top", posY + "px");
         })
                 .on("mouseout", function(d, i) {
                     d3.select(this)
