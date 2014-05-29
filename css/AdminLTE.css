@@ -27,7 +27,7 @@ a:active,
 a:focus {
   outline: none;
   text-decoration: none;
-  color: #72afd2;
+  color: #333;
 }
 /* Layouts */
 .wrapper {

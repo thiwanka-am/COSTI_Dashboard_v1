@@ -394,7 +394,7 @@ function drawTopInstituteGraph(){
 		var defs = instGroup.append("defs");
 		
 		var grad1 = defs.append("linearGradient")
-			.attr("id", "grad1" + i)
+			.attr("id", "topInstGrad1" + i)
 			.attr("x1", "0%")
 		    .attr("y1", "0%")
 		    .attr("x2", "100%")
@@ -405,11 +405,11 @@ function drawTopInstituteGraph(){
 			.attr("stop-opacity", 1);
 		grad1.append("svg:stop")
 		    .attr("offset", "100%")
-		    .attr("stop-color", "#ece93a") // 50acf9
+		    .attr("stop-color", "#3CE55D") // 50acf9
 		    .attr("stop-opacity", 1);
 		
 		var grad2 = defs.append("linearGradient")
-			.attr("id", "grad2" + i)
+			.attr("id", "topInstGrad2" + i)
 			.attr("x1", "0%")
 		    .attr("y1", "0%")
 		    .attr("x2", "100%")
@@ -424,7 +424,7 @@ function drawTopInstituteGraph(){
 		    .attr("stop-opacity", 1);
 		
 		var grad3 = defs.append("linearGradient")
-			.attr("id", "grad3" + i)
+			.attr("id", "topInstGrad3" + i)
 			.attr("x1", "0%")
 		    .attr("y1", "0%")
 		    .attr("x2", "100%")
@@ -435,7 +435,7 @@ function drawTopInstituteGraph(){
 			.attr("stop-opacity", 1);
 		grad3.append("svg:stop")
 		    .attr("offset", "100%")
-		    .attr("stop-color", "#c7ae02") // dabe4c
+		    .attr("stop-color", "#C86C38") // dabe4c
 		    .attr("stop-opacity", 1);
 		
 		var barWidth = parseInt(parseInt(topInstData[i].products) * (instSvgWidth - 35) / maxValue);
@@ -447,7 +447,7 @@ function drawTopInstituteGraph(){
 			.attr("height", 15)
 			.attr("rx", 2)
 			.attr("ry", 2)
-			.style("fill", "url(#grad1" + i + ")");
+			.style("fill", "url(#topInstGrad1" + i + ")");
 			
 		instGroup.append("text")
 			.attr("x", barWidth + 5)
@@ -464,7 +464,7 @@ function drawTopInstituteGraph(){
 			.attr("height", 15)
 			.attr("rx", 2)
 			.attr("ry", 2)
-			.style("fill", "url(#grad2" + i + ")");
+			.style("fill", "url(#topInstGrad2" + i + ")");
 			
 		instGroup.append("text")
 			.attr("x", barWidth + 5)
@@ -481,7 +481,7 @@ function drawTopInstituteGraph(){
 			.attr("height", 15)
 			.attr("rx", 2)
 			.attr("ry", 2)
-			.style("fill", "url(#grad3" + i + ")");
+			.style("fill", "url(#topInstGrad3" + i + ")");
 		
 		instGroup.append("text")
 			.attr("x", barWidth + 5)
