@@ -229,6 +229,7 @@ function loadInitialPositionContent(gii){
 var prevPositionSelection = "";
 
 function reloadPositionContent(gii){
+	$("#drawarea-position").show(500);
 	//Options for the Radar chart
 	radarCnfg = {
 		w: 340,
@@ -899,14 +900,78 @@ var sortAscItems = function (a, b) {
 };
 
 function loadPositionThirdLevel(gii){
-	//$("#drawarea-position").hide(500);
+	$("#drawarea-position").hide(500);
 	$("#radar-chart").hide(500);
+	// create position third level
+	var tempRand = Math.random() * 5;
+	var posThirdLevel = d3.select("#position-third-level");
+	posThirdLevel.selectAll("div").remove();
+	var panelDefault = posThirdLevel.append("div")
+		.attr("class", "panel panel-default");
+	panelDefault.append("div")
+		.attr("class", "panel-heading")
+		.append("h2")
+		.attr("class", "panel-title")
+		.text(gii);
+	var thirdLevelOl = panelDefault.append("ol");
+	var subIndicators = getSubIndicatorArray(gii);
+	var lineChartOptions = {
+		xAxisTitle: "Year",
+		yAxisTitle: "",
+		lineColor: "brown"
+	};
+
+	for (var i = 0; i < subIndicators.length; i++) {
+		var thirdLevelLi = thirdLevelOl.append("li")
+			.text(subIndicators[i]);
+		var str = gii+"-"+i;
+		var divId = str.replace(/ /g, "-");
+		thirdLevelLi.append("div")
+			.attr("id", divId)
+			.style("width", "700px")
+			.style("height", "150px");
+		var lineData = [
+			{name: "2010", value: Math.random() * 50},
+			{name: "2011", value: Math.random() * 50},
+			{name: "2012", value: Math.random() * 50},
+			{name: "2013", value: Math.random() * 50}
+		];
+        var lineChartOptions = {
+        	marginTop: 10,
+        	marginRight: 10,
+        	marginBottom: 40,
+        	marginLeft: 20,
+			xAxisTitle: "Year",
+			yAxisTitle: subIndicators[i],
+			lineColor: "brown",
+			chartTitleEnabled: false
+		};
+		var lc = new LineChart(divId, lineData, lineChartOptions);
+		lc.draw();
+	};
+	
 	$("#position-third-level").show(500);
 	prevPositionSelection = gii;
 	
 }
 
 // for temporary usage
+function getSubIndicatorArray(gii){
+	var siArr = new Array();
+	if(gii === "ICT access"){
+		siArr.push("Fixed Telephone lines (per 100 people)");
+		siArr.push("Mobile cellular telephone subscriptions per 100 inhabitants");
+		siArr.push("International Internet bandwidth (bit/s)per Internet user");
+		siArr.push("Proportion of households with a computer");
+		siArr.push("Proportion of households with Internet access at home");
+	} else if (gii === "ICT use"){
+		siArr.push("Internet users per 100 inhabitants");
+		siArr.push("Fixed broadband Internet subscribers per 100 inhabitants");
+		siArr.push("Mobile broadband subscriptions per 100 inhabitants");
+	}
+	return siArr;
+}
+
 function getNationalIndicatorArray(gii){
 	var niArr = new Array();
 	if(gii == "gii"){

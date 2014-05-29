@@ -27,6 +27,7 @@
 	    <script type="text/javascript" src="ammap/maps/js/worldHigh.js"></script>
 	    <script type="text/javascript" src="js/scripts/position-content.js"></script>
 	    <script type="text/javascript" src="js/d3/RadarChart.js"></script>
+		<script type="text/javascript" src="js/d3/LineChart.js"></script>
 
 	   <!--  <link rel="stylesheet" type="text/css" href="css/default.css" /> -->
 		<!-- <link rel="stylesheet" type="text/css" href="css/component.css" /> -->
@@ -384,7 +385,23 @@
 								<div class="right-content-div" id="rightDivPlaces">
 									<div id="drawarea-places">
 										<div id="sri-lanka-map-area"></div>
-										<div id="top-institutions-area"></div>
+										<div id="top-institutions-area">
+											<div id="top-institutions-menu">
+												<label style="font-size: 14px;">Organization: </label>
+												<select>
+													<option value="All">All</option>
+													<option value="University">University</option>
+													<option value="Institute">Institute</option>
+												</select>&nbsp; &nbsp;
+												<label style="font-size: 14px;">Category: </label>
+												<select>
+													<option value="All">All</option>
+													<option value="Products">Products</option>
+													<option value="Publications">Publications</option>
+													<option value="Patents">Patents</option>
+												</select>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div style="clear: both;"></div>
@@ -393,8 +410,8 @@
 							<div class="tab-pane" id="position">
 								<div id='cssmenu2'  style="float:left;">
 									<ul>
-										<li><a href='#'><span>Global Innovation Index</span></a></li>
-										<li><a href='#' onclick="drawRadarChart('Institutions')"><span>Institutions</span></a>
+										<li><a href='#' onclick="loadInitialPositionContent('gii')"><span>Global Innovation Index</span></a></li>
+										<li><a href='#' onclick="reloadPositionContent('Institutions')"><span>Institutions</span></a>
 											<ul>
 												<li><a href='#' onclick="">Political environment</a></li>
 												<li><a href='#' onclick="">Political stability</a></li>
@@ -410,7 +427,7 @@
 												<li><a href='#' onclick="">Ease of paying taxes</a></li>
 											</ul>
 										</li>
-										<li><a href='#' onclick="drawRadarChart('Human Capital & Research')"><span class="image">Human Capital & Research</span></a>
+										<li><a href='#' onclick="reloadPositionContent('Human Capital & Research')"><span class="image">Human Capital & Research</span></a>
 											<ul>
 												<li><a href='#' onclick="">Education</a></li>
 												<li><a href='#' onclick="">Current expenditure on education, % GNI</a></li>
@@ -429,11 +446,11 @@
 												<li><a href='#' onclick="">QS university ranking, average score top 3</a></li>
 											</ul>
 										</li>
-										<li><a href='#' onclick="drawRadarChart('Infrastructure')"><span>Infrastructure</span></a>
+										<li><a href='#' onclick="reloadPositionContent('Infrastructure')"><span>Infrastructure</span></a>
 											<ul>
 												<li><a href='#' onclick="">Information & communication technologies (ICTs)</a></li>
-												<li><a href='#' onclick="">ICT access</a></li>
-												<li><a href='#' onclick="">ICT use</a></li>
+												<li><a href='#' onclick="loadPositionThirdLevel('ICT access')">ICT access</a></li>
+												<li><a href='#' onclick="loadPositionThirdLevel('ICT use')">ICT use</a></li>
 												<li><a href='#' onclick="">Government’s online service</a></li>
 												<li><a href='#' onclick="">E-participation</a></li>
 												<li><a href='#' onclick="">General infrastructure</a></li>
@@ -448,7 +465,7 @@
 												
 											</ul>
 										</li>
-										<li><a href='#' onclick="drawRadarChart('Market sophistication')"><span>Market sophistication</span></a>
+										<li><a href='#' onclick="reloadPositionContent('Market sophistication')"><span>Market sophistication</span></a>
 											<ul>
 												<li><a href='#' onclick="">Credit</a></li>
 												<li><a href='#' onclick="">Ease of getting credit</a></li>
@@ -466,7 +483,7 @@
 												
 											</ul>
 										</li>
-										<li><a href='#' onclick="drawRadarChart('Business sophistication')"><span>Business sophistication</span></a>
+										<li><a href='#' onclick="reloadPositionContent('Business sophistication')"><span>Business sophistication</span></a>
 											<ul>
 												<li><a href='#' onclick="">Knowledge workers</a></li>
 												<li><a href='#' onclick="">Knowledge-intensive employment, %</a></li>
@@ -488,18 +505,45 @@
 												<li><a href='#' onclick="">FDI net inflows, % GDP</a></li>
 											</ul>
 										</li>
-										<li><a href='#' onclick=""><span>Knowledge & technology outputs</span></a>
+										<li><a href='#' onclick="reloadPositionContent('Knowledge & technology outputs')"><span>Knowledge & technology outputs</span></a>
 											<ul>
 												<li><a href='#' onclick="">Knowledge creation</a></li>
-												<li><a href='#'>Knowledge impact</a></li>
-												<li><a href='#'>Knowledge diffusion</a></li>
+												<li><a href='#' onclick="">Domestic resident patent ap/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">PCT resident patent ap/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">Domestic res utility model ap/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">Scientific & technical articles/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">Citable documents H index</a></li>
+												<li><a href='#' onclick="">Knowledge impact</a></li>
+												<li><a href='#' onclick="">Growth rate of PPP$ GDP/worker, %</a></li>
+												<li><a href='#' onclick="">New businesses/th pop. 15–64</a></li>
+												<li><a href='#' onclick="">Computer software spending, % GDP</a></li>
+												<li><a href='#' onclick="">ISO 9001 quality certificates/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">High- & medium-high-tech manufactures, %</a></li>
+												<li><a href='#' onclick="">Knowledge diffusion</a></li>
+												<li><a href='#' onclick="">Royalty & license fees receipts, % service exports</a></li>
+												<li><a href='#' onclick="">High-tech exports less re-exports, %</a></li>
+												<li><a href='#' onclick="">Comm., computer & info. services exports, %</a></li>
+												<li><a href='#' onclick="">FDI net outflows, % GDP</a></li>
 											</ul>
 										</li>
-										<li><a href='#' onclick=""><span>Creative outputs</span></a>
+										<li><a href='#' onclick="reloadPositionContent('Creative outputs')"><span>Creative outputs</span></a>
 											<ul>
 												<li><a href='#' onclick="">Intangible assets</a></li>
-												<li><a href='#'>Creative goods & services</a></li>
-												<li><a href='#'>Online creativity</a></li>
+												<li><a href='#' onclick="">Domestic res trademark reg/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">Madrid trademark registrations/bn PPP$ GDP</a></li>
+												<li><a href='#' onclick="">ICT & business model creation</a></li>
+												<li><a href='#' onclick="">ICT & organizational model creation</a></li>
+												<li><a href='#' onclick="">Creative goods & services</a></li>
+												<li><a href='#' onclick="">Audio-visual & related services exports, %</a></li>
+												<li><a href='#' onclick="">National feature films/mn pop. 15–69</a></li>
+												<li><a href='#' onclick="">Paid-for dailies, circulation, % pop. 15–69</a></li>
+												<li><a href='#' onclick="">Printing & publishing manufactures, %</a></li>
+												<li><a href='#' onclick="">Creative goods exports, %</a></li>
+												<li><a href='#' onclick="">Online creativity</a></li>
+												<li><a href='#' onclick="">Generic top-level domains (TLDs)/th pop. 15–69</a></li>
+												<li><a href='#' onclick="">Country-code TLDs/th pop. 15–69</a></li>
+												<li><a href='#' onclick="">Wikipedia monthly edits/mn pop. 15–69</a></li>
+												<li><a href='#' onclick="">Video uploads on YouTube/pop. 15–69</a></li>
 											</ul>
 										</li>
 									</ul>
@@ -508,7 +552,9 @@
 									<div id="drawarea-position">
 										<div id="region-map-area"></div>
 										<div id="radar-chart"></div>
+										
 									</div>
+									<div id="position-third-level"></div>
 								</div>
 								<div style="clear: both;"></div>
 							</div>	
